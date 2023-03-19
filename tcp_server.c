@@ -78,13 +78,6 @@ static void handle_connection(int conn_sock) {
 
 static void run_server() {
 	int server_sock = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
-	// struct sockaddr_in listen_addr =
-	// 	{
-	// 		.sin_len	= sizeof(struct sockaddr_in),
-	// 		.sin_family = AF_INET,
-	// 		.sin_port	= htons(1234),
-	// 		.sin_addr	= 0,
-	// 	};
 
 	struct sockaddr_in listen_addr;
 	listen_addr.sin_len			= sizeof(struct sockaddr_in);
