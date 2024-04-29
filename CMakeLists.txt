@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.13)
 
 set(PICO_SDK_FETCH_FROM_GIT on)
-
+FetchContent_Declare( freertos_kernel
+  GIT_REPOSITORY https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+  GIT_TAG        main #Note: Best practice to use specific git-hash or tagged version
+)
 include(pico_sdk_import.cmake)
 include(FreeRTOS_Kernel_import.cmake)
 
