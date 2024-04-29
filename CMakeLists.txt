@@ -11,6 +11,19 @@ set(PICO_SDK_FETCH_FROM_GIT on)
 include(pico_sdk_import.cmake)
 include(FreeRTOS_Kernel_import.cmake)
 
+add_library(freertos_config INTERFACE)
+
+target_include_directories(freertos_config SYSTEM
+INTERFACE
+    include
+)
+
+target_compile_definitions(freertos_config
+  INTERFACE
+    projCOVERAGE_TEST=0
+)
+
+
 project(tcp_ip C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
